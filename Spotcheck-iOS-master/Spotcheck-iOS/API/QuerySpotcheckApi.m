@@ -25,9 +25,9 @@
 #pragma mark - Service level methods
 // These create a QuerySpotcheckApi object.
 
-+ (instancetype)saveAccount:(AccountForm *)accountForm
++ (instancetype)createAccount:(AccountForm *)accountForm
 {
-    NSString *methodName = @"spotcheck.createAccount";
+    NSString *methodName = @"accountApi.createAccount";
     QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.bodyObject = accountForm;
     query.expectedObjectClass = [Account class];
@@ -36,7 +36,7 @@
 
 + (instancetype)authenticateAccount:(NSString *)email: (NSString *)password
 {
-    NSString *methodName = @"spotcheck.authenticateAccount";
+    NSString *methodName = @"accountApi.authenticateAccount";
     QuerySpotcheckApi *query = [self queryWithMethodName:methodName];
     query.email = email;
     query.password = password;

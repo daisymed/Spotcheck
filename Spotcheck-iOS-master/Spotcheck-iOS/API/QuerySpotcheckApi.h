@@ -39,7 +39,7 @@
 //  Authorization scope(s):
 //   kGTLAuthScopeSuggestionBeanApiUserinfoEmail
 // Fetches an Account.
-+ (instancetype)saveAccount:(AccountForm *)accountForm;
++ (instancetype)createAccount:(AccountForm *)accountForm;
 + (instancetype)authenticateAccount:(NSString *)email:(NSString *)password;
 
 

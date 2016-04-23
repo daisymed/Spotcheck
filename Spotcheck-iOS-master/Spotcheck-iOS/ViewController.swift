@@ -11,13 +11,18 @@ import UIKit
 class ViewController: UIViewController
 {
     
-    @IBOutlet var passwordField: UITextField!
-    @IBOutlet var emailField: UITextField!
-    @IBOutlet var lastNameField: UITextField!
-    @IBOutlet var firstNameField: UITextField!
     
-    @IBAction func saveAccount(sender: AnyObject)
-    {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+   
+    
+    
+    
+  /*  @IBAction func signUp(sender: AnyObject) {
+    
+    
         var service : ServiceSpotcheckApi? = nil
         if service == nil
         {
@@ -34,7 +39,7 @@ class ViewController: UIViewController
         
         print("\n\nAccountForm:\nf= \(accountForm.firstName)\nl= \(accountForm.lastName)\ne= \(accountForm.email)\np= \(accountForm.password)", terminator: "\n")
         
-        let query : QuerySpotcheckApi = QuerySpotcheckApi.saveAccount(accountForm) as QuerySpotcheckApi
+        let query : QuerySpotcheckApi = QuerySpotcheckApi.createAccount(accountForm) as QuerySpotcheckApi
         
         service!.executeQuery(query, completionHandler:
             { (ticket: GTLServiceTicket!, object: AnyObject!, error: NSError!) -> Void in
@@ -52,8 +57,9 @@ class ViewController: UIViewController
         })
     }
     
-    @IBAction func getAccount(sender: AnyObject)
-    {
+   /* @IBAction func logIn(sender: AnyObject) {
+   
+    
         var service : ServiceSpotcheckApi? = nil
         if service == nil
         {
@@ -82,10 +88,25 @@ class ViewController: UIViewController
                 
                 self.firstNameField.text = "\(resp.firstName) "
                 self.lastNameField.text = "\(resp.lastName) "
-                self.emailField.text = "\(resp.email) "
+    */            self.emailField.text = "\(resp.email) "
                 self.passwordField.text = "\(resp.password) "
-        })
-    }
+   */   // })
     
+      /*      func viewDidAppear(animated: Bool)
+            {
+            super.viewDidAppear(true)
+            
+            let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+            if (isLoggedIn != 1) {
+                self.performSegueWithIdentifier("goto_login", sender: self)
+            } else {
+                self.emailField.text = prefs.valueForKey("USERNAME") as? String
+     */    //   }
+      //  }
+    
+    
+//}
+
 }
 
